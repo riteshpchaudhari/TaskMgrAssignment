@@ -1,0 +1,26 @@
+
+CREATE DATABASE TASKMANAGER;
+
+CREATE TABLE tasks (
+	taskid BIGINT(10) NOT NULL AUTO_INCREMENT,
+	taskname VARCHAR(50) NULL DEFAULT NULL,
+	parenttaskid BIGINT(10) NULL DEFAULT NULL,
+	startdate VARCHAR(10) NULL DEFAULT NULL,
+	enddate VARCHAR(10) NULL DEFAULT NULL,
+	priority VARCHAR(2) NULL DEFAULT NULL,
+	status VARCHAR(1) NULL DEFAULT NULL,
+	PRIMARY KEY (taskid),
+	CONSTRAINT FKTASKS FOREIGN KEY (parenttaskid) REFERENCES tasks (taskid)
+);
+
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('product backlog creation',null,'07/09/2019','10/09/2019','15','I');
+insert into tasks (taskname, parentTaskid, startdate, enddate, priority, status) values('sprint planning and sprint backlog creation',null,'10/09/2019','12/09/2019','30','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('sent artifacts email',null,'11/09/2019','16/09/2019','1','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('work on sprint',null,'13/09/2019','23/09/2019','0','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('scrum meeting',null,'09/09/2019','19/09/2019','26','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('testing',null,'10/09/2018','20/09/2018','17','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('product demonstration',null,'15/09/2019','19/09/2019','15','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('bussiness acceptance',null,'16/09/2019','21/09/2019','16','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('sprint close',null,'17/09/2019','26/09/2019','19','I');
+insert into tasks (taskname, parenttaskid, startdate, enddate, priority, status) values('add backlog in next sprint',null,'20/09/2019','24/09/2019','1','I');
+
